@@ -1,0 +1,246 @@
+/* =========================================
+   SISTEMA DE COLORES Y FUENTES
+========================================= */
+:root {
+    --bg-negro: #08080c;
+    --cyan: #00f2ff;
+    --rosa: #ff007f;
+    --morado: #9d00ff;
+    --glass: rgba(255, 255, 255, 0.03);
+    --borde-cyber: rgba(0, 242, 255, 0.2);
+    --font-header: 'Shojumaru', cursive;
+    --font-body: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-negro);
+    /* Fondo de rejilla tecnológica */
+    background-image: 
+        linear-gradient(rgba(0, 242, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 242, 255, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+    color: #fff;
+    font-family: var(--font-body);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* =========================================
+   HEADER: MENÚ HOLOGRÁFICO
+========================================= */
+header {
+    width: 100%;
+    padding: 20px;
+    background: rgba(8, 8, 12, 0.9);
+    border-bottom: 2px solid var(--cyan);
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-header);
+    color: var(--cyan);
+    font-size: 1.8rem;
+    text-shadow: 0 0 10px var(--cyan);
+    margin-bottom: 15px;
+}
+
+nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--rosa);
+    text-shadow: 0 0 8px var(--rosa);
+}
+
+/* =========================================
+   CONTENEDOR GLOBAL (EL SECRETO DEL CENTRADO)
+========================================= */
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 80px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra todo horizontalmente */
+    text-align: center;
+}
+
+.titulo-seccion {
+    font-family: var(--font-header);
+    font-size: 2.2rem;
+    color: #fff;
+    margin-bottom: 40px;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+/* =========================================
+   HERO (INICIO)
+========================================= */
+#hero {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, rgba(8,8,12,0.2), var(--bg-negro)),
+                url('https://wallpapers.com/images/featured-full/anime-iphone-psdmm565oizldbbg.jpg') center/cover;
+    width: 100%;
+}
+
+.hero-content h1 {
+    font-family: var(--font-header);
+    font-size: clamp(2rem, 8vw, 4rem);
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: #fff;
+    text-shadow: 4px 4px var(--rosa), -2px -2px var(--cyan);
+}
+
+/* =========================================
+   CARDS DE ACTIVIDADES (GRID)
+========================================= */
+.grid-actividades, .grid-espacios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.card, .espacio-caja {
+    background: var(--glass);
+    border: 1px solid var(--borde-cyber);
+    padding: 30px;
+    border-radius: 5px;
+    /* Efecto de esquina recortada tech */
+    clip-path: polygon(0 0, 90% 0, 100% 10%, 100% 100%, 10% 100%, 0 90%);
+    transition: 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.card:hover {
+    background: rgba(0, 242, 255, 0.05);
+    transform: translateY(-5px);
+    border-color: var(--cyan);
+}
+
+.card h3 {
+    color: var(--rosa);
+    font-family: var(--font-header);
+    margin-bottom: 15px;
+}
+
+/* =========================================
+   SECCIÓN PAGO (EL DE TU CAPTURA)
+========================================= */
+#pago {
+    background: rgba(157, 0, 255, 0.05);
+    border: 2px solid var(--morado);
+    border-radius: 20px;
+    padding: 50px 20px;
+    margin-top: 50px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.qr-box {
+    background: #fff;
+    padding: 15px;
+    border-radius: 15px;
+    display: inline-block;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.1);
+    margin-bottom: 25px;
+}
+
+.precio {
+    font-family: var(--font-body);
+    font-weight: 800;
+    font-size: 2.5rem !important;
+    color: #fff;
+    text-shadow: 0 0 15px var(--rosa);
+    margin: 20px 0;
+}
+
+.btn-principal {
+    display: inline-block;
+    padding: 18px 40px;
+    background: transparent;
+    border: 2px solid var(--cyan);
+    color: var(--cyan);
+    font-family: var(--font-header);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    clip-path: polygon(10% 0, 100% 0, 100% 70%, 90% 100%, 0 100%, 0% 30%);
+    transition: 0.4s;
+    margin-top: 20px;
+}
+
+.btn-principal:hover {
+    background: var(--cyan);
+    color: #000;
+    box-shadow: 0 0 30px var(--cyan);
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+footer {
+    width: 100%;
+    padding: 60px 20px;
+    background: #040406;
+    border-top: 1px solid var(--borde-cyber);
+    margin-top: 50px;
+    text-align: center;
+}
+
+.redes span {
+    color: var(--cyan);
+    font-weight: bold;
+    margin: 0 15px;
+    cursor: pointer;
+}
+
+footer p {
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 20px;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+@media (max-width: 768px) {
+    nav ul {
+        gap: 10px;
+    }
+    nav a { font-size: 0.7rem; }
+    .hero-content h1 { font-size: 2.5rem; }
+    .titulo-seccion { font-size: 1.8rem; }
+}
